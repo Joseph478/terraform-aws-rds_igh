@@ -40,6 +40,7 @@ resource "aws_db_instance" "this" {
     delete_automated_backups    = var.delete_automated_backups
     deletion_protection         = false
     #encrypt storage
-
+    final_snapshot_identifier   = "db-${var.name_main}-snapshot-delete"
+    skip_final_snapshot         = var.skip_final_snapshot
     # tags = "${merge(var.tags, map("Name", format("%s", var.name_main)))}"
 }

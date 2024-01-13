@@ -102,3 +102,7 @@ variable "db_port" {
     description = "PORT used to connect to DB"
     type = number
 }
+variable "skip_final_snapshot" {
+    description     = "Skip the final snapshot"
+    type            = bool
+}
