@@ -68,7 +68,8 @@ module "db_instance" {
     apply_immediately           = var.apply_immediately
     copy_tags_to_snapshot       = var.copy_tags_to_snapshot
 
-    backup_retention_period = var.backup_retention_period
-    delete_automated_backups = var.delete_automated_backups
+    backup_retention_period     = var.backup_retention_period
+    delete_automated_backups    = var.delete_automated_backups
+    skip_final_snapshot         = var.skip_final_snapshot
     tags = "${var.tags}"
 }

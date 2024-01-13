@@ -89,6 +89,10 @@ variable "delete_automated_backups" {
 }
 
 variable "tags" {
-    description = "A mapping of tags to assign to all resources"
-    default     = {}
+    description     = "A mapping of tags to assign to all resources"
+    default         = {}
+}
+variable "skip_final_snapshot" {
+    description     = "Skip the final snapshot"
+    type            = bool
 }
