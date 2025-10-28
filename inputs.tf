@@ -43,6 +43,12 @@ variable "password" {
     description = "Password for the master DB user. Note that this may show up in logs, and it will be stored in the state file"
     type = string
 }
+
+variable "db_name" {
+    description = "The name of the database to create when the DB instance is created"
+    type        = string
+    default     = null
+}
 # HASTA AQUI
 variable "vpc_security_group_ids" {
     description = "List of VPC security groups to associate"

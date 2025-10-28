@@ -11,7 +11,7 @@ resource "aws_db_instance" "this" {
     storage_type      = var.storage_type
     storage_encrypted           = true
 
-    # db_name     = "${var.name}"
+    db_name  = var.db_name
     username = var.username
     password = var.password
     # port     = "${var.port}"

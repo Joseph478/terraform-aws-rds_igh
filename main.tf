@@ -53,6 +53,7 @@ module "db_instance" {
     storage_type      = "${var.storage_type}"
     username = "${var.username}"
     password = "${var.password}"
+    db_name  = "${var.db_name}"
     # port     = "${var.port}"
 
     vpc_security_group_ids = [aws_security_group.security_group.id]
