@@ -2,7 +2,7 @@ resource "aws_db_instance" "this" {
     identifier = "db-${var.name_main}"
 
     engine            = var.engine
-    # engine_version    = "${var.engine_version}"
+    engine_version    = var.engine_version
     # db.t3.micro
     instance_class    = var.instance_class
     allocated_storage = var.allocated_storage

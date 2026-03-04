@@ -8,6 +8,12 @@ variable "engine" {
     type = string
 }
 
+variable "engine_version" {
+    description = "The engine version to use"
+    type        = string
+    default     = null
+}
+
 variable "instance_class" {
     description = "The instance type of the RDS instance"
     type = string

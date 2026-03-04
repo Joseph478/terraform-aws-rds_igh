@@ -10,6 +10,12 @@ variable "engine" {
     description = "Engine of database"
     type = string
 }
+
+variable "engine_version" {
+    description = "The engine version to use"
+    type        = string
+    default     = null
+}
 variable "private_subnets" {
     description = "Subnets Private"
     type = list(string)
