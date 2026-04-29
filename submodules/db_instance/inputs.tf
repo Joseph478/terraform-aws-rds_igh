@@ -108,3 +108,9 @@ variable "skip_final_snapshot" {
     description     = "Skip the final snapshot"
     type            = bool
 }
+
+variable "performance_insight" {
+    description = "Value for enable performance insight"
+    type        = bool
+    default     = false
+}

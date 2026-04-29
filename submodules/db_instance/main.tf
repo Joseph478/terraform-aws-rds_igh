@@ -24,7 +24,7 @@ resource "aws_db_instance" "this" {
     publicly_accessible = var.publicly_accessible
 
     # monitoring
-    # performance_insights_enabled = var.performance_insight
+    performance_insights_enabled = var.performance_insight
 
 
 

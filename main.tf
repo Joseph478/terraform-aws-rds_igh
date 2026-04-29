@@ -59,6 +59,7 @@ module "db_instance" {
     vpc_security_group_ids = [aws_security_group.security_group.id]
     db_subnet_group_name   = module.db_subnet_group.db_subnet_group_id
     # parameter_group_name   = "${module.db_parameter_group.this_db_parameter_group_id}"
+    performance_insight = var.performance_insight
 
     multi_az            = var.multi_az
     # iops                = "${var.iops}"

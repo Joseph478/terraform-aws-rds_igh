@@ -106,15 +106,24 @@ variable "tags" {
     description = "A mapping of tags to assign to all resources"
     default     = {}
 }
+
 variable "vpc_id" {
     description = "ID VPC"
     type        = string
 }
+
 variable "db_port" {
     description = "PORT used to connect to DB"
     type = number
 }
+
 variable "skip_final_snapshot" {
     description     = "Skip the final snapshot"
     type            = bool
+}
+
+variable "performance_insight" {
+    description = "Value for enable performance insight"
+    type        = bool
+    default     = false
 }
