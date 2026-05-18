@@ -3,5 +3,5 @@ resource "aws_db_subnet_group" "this" {
     description = "Database subnet group for ${var.name_main}"
     subnet_ids  = var.subnet_ids
 
-    # tags = "${merge(var.tags, map("Name", format("%s", var.name_main)))}"
+    tags = var.tags
 }

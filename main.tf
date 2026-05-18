@@ -36,9 +36,9 @@ resource "aws_security_group" "security_group" {
         ipv6_cidr_blocks = ["::/0"]
     }
 
-    tags = {
-        Name = "security_group_ec2"
-    }
+    tags = merge(var.tags, {
+        Name = "security_group_rds_${var.name_main}"
+    })
 }
 
 # DB instance
