@@ -18,3 +18,23 @@ output "id" {
   value       = aws_db_instance.this.id
 }
 
+output "arn" {
+  description = "The ARN of the RDS instance"
+  value       = aws_db_instance.this.arn
+}
+
+output "resource_id" {
+  description = "The RDS Resource ID of this instance"
+  value       = aws_db_instance.this.resource_id
+}
+
+output "db_name" {
+  description = "The name of the database"
+  value       = aws_db_instance.this.db_name
+}
+
+output "status" {
+  description = "The RDS instance status"
+  value       = aws_db_instance.this.status
+}
+
