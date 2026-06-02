@@ -1,3 +1,9 @@
+locals {
+    common_tags = merge(var.tags, {
+        Name = "db-${var.name_main}"
+    })
+}
+
 resource "aws_db_instance" "this" {
     identifier = "db-${var.name_main}"
 
@@ -42,5 +48,9 @@ resource "aws_db_instance" "this" {
     #encrypt storage
     final_snapshot_identifier   = "db-${var.name_main}-snapshot-delete"
     skip_final_snapshot         = var.skip_final_snapshot
-    tags = var.tags
+    tags = local.common_tags
+
+    lifecycle {
+        ignore_changes = [tags["ORDEN"], tags["Name"]]
+    }
 }

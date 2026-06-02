@@ -1,9 +1,16 @@
+locals {
+    common_tags = merge(var.tags, {
+        ENV     = "PROD"
+        SERVICE = upper(var.name_main)
+    })
+}
+
 # DB subnet group
 module "db_subnet_group" {
     source = "./submodules/db_subnet_group"
     name_main = var.name_main
     subnet_ids  = var.private_subnets
-    tags = "${var.tags}"
+    tags = local.common_tags
 }
 
 resource "aws_security_group" "security_group" {
@@ -36,9 +43,13 @@ resource "aws_security_group" "security_group" {
         ipv6_cidr_blocks = ["::/0"]
     }
 
-    tags = merge(var.tags, {
+    tags = merge(local.common_tags, {
         Name = "security_group_rds_${var.name_main}"
     })
+
+    lifecycle {
+        ignore_changes = [tags["ORDEN"], tags["Name"]]
+    }
 }
 
 # DB instance
@@ -73,5 +84,5 @@ module "db_instance" {
     backup_retention_period     = var.backup_retention_period
     delete_automated_backups    = var.delete_automated_backups
     skip_final_snapshot         = var.skip_final_snapshot
-    tags = "${var.tags}"
+    tags = local.common_tags
 }
