@@ -82,7 +82,5 @@ module "db_instance" {
     copy_tags_to_snapshot       = var.copy_tags_to_snapshot
 
     backup_retention_period     = var.backup_retention_period
-    delete_automated_backups    = var.delete_automated_backups
-    skip_final_snapshot         = var.skip_final_snapshot
     tags = local.common_tags
 }
