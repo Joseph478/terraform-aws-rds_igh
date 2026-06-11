@@ -43,11 +43,11 @@ resource "aws_db_instance" "this" {
     backup_retention_period     = var.backup_retention_period
 
     # deletion backups when db is deleted
-    delete_automated_backups    = var.delete_automated_backups
-    deletion_protection         = false
+    delete_automated_backups    = false
+    deletion_protection         = true
     #encrypt storage
     final_snapshot_identifier   = "db-${var.name_main}-snapshot-delete"
-    skip_final_snapshot         = var.skip_final_snapshot
+    skip_final_snapshot         = false
     tags = local.common_tags
 
     lifecycle {

@@ -95,20 +95,10 @@ variable "backup_retention_period" {
     default     = 1
 }
 
-variable "delete_automated_backups" {
-    description = "Delete backupts with the instance"
-    default = false
-}
-
 variable "tags" {
     description     = "A mapping of tags to assign to all resources"
     default         = {}
 }
-variable "skip_final_snapshot" {
-    description     = "Skip the final snapshot"
-    type            = bool
-}
-
 variable "performance_insight" {
     description = "Value for enable performance insight"
     type        = bool
