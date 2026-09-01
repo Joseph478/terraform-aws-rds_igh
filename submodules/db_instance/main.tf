@@ -42,6 +42,9 @@ resource "aws_db_instance" "this" {
     copy_tags_to_snapshot       = var.copy_tags_to_snapshot
     backup_retention_period     = var.backup_retention_period
 
+    # CloudWatch Logs exports for auditing and monitoring
+    enabled_cloudwatch_logs_exports = var.enabled_cloudwatch_logs_exports
+
     # deletion backups when db is deleted
     delete_automated_backups    = false
     deletion_protection         = true

@@ -92,7 +92,13 @@ variable "copy_tags_to_snapshot" {
 variable "backup_retention_period" {
     description = "The days to retain backups for"
     type = number
-    default     = 1
+    default     = 30
+}
+
+variable "enabled_cloudwatch_logs_exports" {
+    description = "List of log types to export to CloudWatch Logs. Valid values depend on DB engine (error, general, slowquery for MySQL; postgresql for PostgreSQL; oracle-alert, oracle-audit, oracle-trace, oracle-listener for Oracle; audit, error, general, slowquery for MariaDB)"
+    type = list(string)
+    default = []
 }
 
 variable "tags" {

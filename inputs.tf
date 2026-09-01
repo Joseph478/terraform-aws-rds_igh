@@ -119,3 +119,9 @@ variable "performance_insight" {
     type        = bool
     default     = false
 }
+
+variable "enabled_cloudwatch_logs_exports" {
+    description = "List of log types to export to CloudWatch Logs"
+    type = list(string)
+    default = []
+}

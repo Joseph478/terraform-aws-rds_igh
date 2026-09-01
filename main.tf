@@ -82,5 +82,6 @@ module "db_instance" {
     copy_tags_to_snapshot       = var.copy_tags_to_snapshot
 
     backup_retention_period     = var.backup_retention_period
+    enabled_cloudwatch_logs_exports = var.enabled_cloudwatch_logs_exports
     tags = local.common_tags
 }
